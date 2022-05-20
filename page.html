@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet' />
+    
+    <title>Maps Project</title>
+
+    <style>
+        #map{
+            height: 800px;
+            width: 800px;
+            margin:5rem auto;
+        }
+
+        .command {
+    padding: 4px 6px;
+    background: white;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    min-width: 200px;
+}
+    </style>
+
+</head>
+<body>
+    
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+
+
+      function geticon(icon){
+
+        var  tincon = L.icon({
+    iconUrl: 'maps/interest-point/' + icon,
+
+
+    //shadowUrl: 'icon-shadow.png',
+    iconSize:     [33, 44], // taille de l'icone
+                //shadowSize:   [50, 64], // taille de l'ombre
+                iconAnchor:   [16, 44], // point de l'icone qui correspondra à la position du marker
+                //shadowAnchor: [32, 64],  // idem pour l'ombre
+                popupAnchor:  [-3, -76] /// point from which the popup should open relative to the iconAnchor
+});
+
+return  tincon;
+      }
+  
+    //  var marker = L.marker([45.87479384351134, 1.265177371265805], {icon:  geticon("shopping.png")}, {icon:  geticon("shopping.png")}).addTo(map);
+    const secour = L.marker([45.87479384351134, 1.265177371265805], {icon: geticon("pizza.png")});
+   secour.bindPopup("<h3> Secours Populaire Français </h3> Le Secours populaire français a une approche globale des problématiques de pauvreté. Il intervient dans les domaines de l’aide alimentaire, vestimentaire, l’accès et le maintien dans le logement, l’accès aux soins, l’insertion socioprofessionnelle, l’accès à la culture et plus généralement l’accès aux droits. \nLa personne qui franchit les portes du Secours populaire français pour y demander un soutien cumule bien souvent de nombreuses problématiques de précarité et de pauvreté. Des difficultés d’endettement ont le plus souvent déjà contribué à la dégradation des conditions de vie de la personne, que ce soit au titre du maintien dans le logement, du renoncement aux soins, de privations alimentaires ou de loisirs. C’est pourquoi une approche globale est privilégiée pour aider les personnes accueillies à faire face à ces difficultés.");
+
+
+
+   const marker0 = L.marker([45.869731446531404, 1.2638575405686927], {icon: geticon("shopping.png")})
+   marker0.bindPopup("<h3> Action </h3> L'enseigne se positionne principalement sur les produits non périssables comme les articles de décoration, les produits d'entretien, avec aussi une forte proportion des produits de cosmétique et d'hygiène. Action est surtout connu pour proposer des produits à prix bas.");
+ 
+
+
+   const marker1 = L.marker([45.896655215829945, 1.2796234694050694],  {icon:  geticon("shopping.png")})
+   marker1.bindPopup("<h3> Boulanger Limoges </h3> Chaîne de distribution d'équipement électroménager et multimédia multimarque pour la maison et les loisirs. Les magasins Boulanger proposent à la vente une large gamme de produits multimédias et électroménagers : TV, ordinateurs, écrans plats, tablettes, télephones, appareils photo numériques.");
+
+
+   const marker2 = L.marker([45.869596894671766, 1.2703320982398911])
+   marker2.bindPopup("<h3> E.Leclerc LIMOGES</h3> L'hypermarché E.LECLERC dispose d'un surface de vente climatisée de 6 990 m2, de parkings couverts, d'un drive en sous-sol, d'un espace restauration (cafétéria, Boîte à Burger, Restaurant LA TABLE), d'un SAV, d'un service location de véhicules, d'un centre auto, d'une station-service.");
+
+
+   const marker3 = L.marker([45.86972397612752, 1.2638575405686927],  {icon:  geticon("shopping.png")})
+   marker3.bindPopup("<h3> ELECTRO DEPOT LIMOGES </h3> Chaîne de dépôts discount proposant des produits d'électroménager, multimédias et audiovisuels sur palettes. La gamme de produits est assez réduite mais permet de couvrir tous les besoins des consommateurs, avec des produits au rapport qualité-prix très intéressant. Il devient donc facile de faire ses achats de manière rapide, efficace et très économique. De plus, grâce à la garantie des produits de 2 ans minimum, le consommateur peut acheter en toute confiance.");
+
+  
+   const marker4 = L.marker([45.86195016491308, 1.2789530313216786], {icon:  geticon("tickets.png")})
+   marker4.bindPopup("<h3> Zénith Limoges Métropole </h3> Le Zénith Limoges Métropole est implanté en zone nord de Limoges à l’orée du Bois de la Bastide. C’est une salle de spectacle établie à Limoges qui accueille divers concerts et spectacles. La salle comprend des gradins, un parterre, une scène et des dégagements. Elle intègre un espace régi en milieu de gradins, ainsi qu’un plafond technique sur l’ensemble de la superficie. Des loges, des bureaux, deux caterings sont mis à disposition");
+
+   const marker5 = L.marker([45.86081665195144, 1.2959549056370376],  {icon:  geticon("restaurants.png")})
+   marker5.bindPopup("<h3> RU de l'ENSIL-ENSCI</h3> Les Crous se mobilisent pour offrir une restauration de qualité et à petit prix à tous les étudiants.<br>Pour 3,30 €, vous pouvez choisir un repas compl, La formule pizza ou pâtes fraîches (pizza végétarienne proposée chaque jour) ou Une formule au prix du ticket étudiant dans les cafétérias.</br> <br>Le paiement :Avec votre carte Izly, En espèces : en caisse, En CB</br>");
+   
+   const marker6 = L.marker([45.85582330611212, 1.282045323376401],  {icon:  geticon("swimming-pools.png")})
+   marker6.bindPopup("<h3> L'Aquapolis </h3> L'Aquapolis, le centre aquatique de Limoges Métropole a ouvert ses portes au public le 19 janvier 2015. Après une première pierre posée en mars 2012 et plus de deux ans de travaux, L'Aquapolis, situé rue du Puy Ponchet au nord de la commune de Limoges a pris toute sa place sur le site de sa construction.Équipement de grande ambition, L’Aquapolis compte aujourd’hui parmi les grands complexes aquatiques français.Du 31 mars au 5 avril 2015, L'Aquapolis a accueilli les championnats de France de Natation où quelques 700 nageurs étaient présents et plus de 2 000 personnes participant à cet évènement pendant les six jours de compétition et qui a reçu 1 500 spectateurs par jour.");
+   
+   const marker7 = L.marker([45.85426606644603, 1.2848503828969553], {icon:  geticon("movies.png")})
+   marker7.bindPopup("<h3>Cinéma Grand Ecran Ester  </h3>Ce cinéma programme sorties nationales, avant-premières, opéras ou ballets et cycles connaissance du monde.Cinéma de 14 salles, 8 salles équipées du label qualité Cinémax® , Grand Ecran, 1 salle de jeux, Projection numérique et son immersif, Comptoir confiserie avec de multiples produits, 1 distributeur de billets dans le hall du cinéma.Possibilité d'acheter vos places sur le site internet ou sur l’application Smartphone gratuite GRAND ECRAN.");
+   
+   const marker8 = L.marker([45.84170676268977, 1.2598889675540768],  {icon:  geticon("retail-stores.png")})
+   marker8.bindPopup("<h3> Emmaüs 87 </h3> Un lieu de vente d’objets d’occasions, c’est une structure à part entière. Les activités principales sont la récupération, le recyclage, le tri, la valorisation et la vente des dons que nous recevons. Vous pouvez également déposer vos dons aux horaires d’ouverture à l’arrière du magasin. Emmaüs 87 propose à très bas prix du matériel et de l’ameublement de première nécessité à des familles et jeunes en difficultés financières ou bien matérielles");
+   
+   const marker9 = L.marker([45.83879409426097, 1.2356055233758614],  {icon:  geticon("restaurants.png")})
+   marker9.bindPopup("<h3> Restaurant universitaire La Borie </h3>  Les Crous se mobilisent pour offrir une restauration de qualité et à petit prix à tous les étudiants.<br>Pour 3,30 €, vous pouvez choisir un repas compl, La formule pizza ou pâtes fraîches (pizza végétarienne proposée chaque jour) ou Une formule au prix du ticket étudiant dans les cafétérias.</br> <br>Le paiement :Avec votre carte Izly, En espèces : en caisse, En CB</br>");
+       
+   const marker10 = L.marker([45.836825449448746, 1.254599669403299], {icon:  geticon("tickets.png")})
+   marker10.bindPopup("<h3> Théâtre de l'Union </h3> Centre Dramatique National du Limousin en tant que lieu de création met au centre de son projet artistique la création et la production d’œuvres dramatiques.Il dispose d’une salle de 360 places, rue des Coopérateurs à Limoges et possède des ateliers décors et costumes qui lui permettent de déployer sa capacité de création et de production.");
+   
+   const marker11 = L.marker([45.8366237014746, 1.2591373559101442], {icon:  geticon("fashion.png")})
+   marker11.bindPopup("<h3> Centre Commercial Saint Martial Limoges</h3>Le centre Saint-Martial est un des principaux centres commerciaux de Limoges, France. De nombreuses grandes enseignes sont installées dans le centre. Au total, soixante boutiques sont présentes. Ce centre commercial abrite des boutiques de mode, décoration, beauté, téléphonie et des lieux de restauration.   ");
+   
+   const marker12 = L.marker([45.83558880406802, 1.2644402252251408], {icon:  geticon("lawn-garden.png")})
+   marker12.bindPopup("<h3> Champ de Juillet</h3>   Le Champ de Juillet est un parc de la ville de Limoges, situé près de la gare des Bénédictins, dans l'axe joignant cette dernière à la place royale Denis-Dussoubs.Il recouvre 2,7 hectares pour le seul parc, plus de cinq hectares si l'on prend en compte les parkings. Près du grand bassin, on admirera les massifs végétaux, décorés suivant la technique spécifique de la mosaïculture   ");
+
+
+   const marker13 = L.marker([45.83640390203561, 1.2675247405676495], {icon:  geticon("transport.png")})
+   marker13.bindPopup("<h3> Gare des Benedictins </h3> La gare de Limoges-Bénédictins est une gare ferroviaire française, la principale des deux gares de la commune de Limoges, dans le département de la Haute-Vienne, en région Nouvelle-Aquitaine.La gare de Limoges-Bénédictins est désormais une gare de la Société nationale des chemins de fer français (SNCF), desservie par les trains des réseaux Intercités et TER Nouvelle-Aquitaine.");
+
+   const marker14 = L.marker([45.83431753365023, 1.2691302982388417], {icon:  geticon("games.png")})
+   marker14.bindPopup("<h3> KURIOSCAPE - Escape Game </h3>  Situé aux portes du centre-ville de Limoges ce jeu d'évasion grandeur nature vous proposera 4 salles et 4 scénarios. Les deux premiers univers vous transporteront dans un bunker pendant la seconde Guerre Mondiale et dans un hôtel dans les années 70. Dans un univers immersif, une équipe de 3 à 6 joueurs (ou 3 à 5 joueurs selon les salles) doit résoudre une suite d’énigmes pour atteindre l’objectif final en moins de 60mn. ");
+
+   const marker15 = L.marker([45.834340732123955, 1.2698169405676072], {icon:  geticon("games.png")})
+   marker15.bindPopup("<h3> Laser League </h3> Le Laser League Limoges est un centre de laser game et complexe de loisirs fédérateurs et multi-générationnels au centre de Limoges.L'espace laser games se joue entre amis, en famille ou avec votre équipe de combat, vous vous affrontez pour gagner le maximum de points en touchant le plus possible les joueurs adverses sans tirer sur vos coéquipiers.Une partie standard dure 20 minutes. 30 joueurs peuvent s'affronter en même temps, en solo ou en équipe, avec la dernière technologie de jeu laser.");
+
+   
+   const marker16 = L.marker([45.833749509846115, 1.2698390270744166], {icon:  geticon("health-medical.png")})
+   marker16.bindPopup("<h3> CPAM de la Haute-Vienne </h3> L’assurance maladie est le modèle d'organisation du système de santé.Les étudiants étrangers sont couvert par la protection universelle maladie. Vous pourriez alors bénéficiez du remboursement de vos frais de santé en cas de maladie ou de maternité par la caf de votre lieu de résidence.\nLa procédure est la suivante :\n1) vous vous inscrivez sur le site etudiant-etranger.ameli.fr. <br>\n2) Dès que vous avez votre numéro provisoire Vous avez immédiatement accès au remboursement de vos frais de santé par l’assurance maladie.");
+
+  
+   const marker18 = L.marker([45.832235909021975, 1.2527451215071463], {icon:  geticon("museums.png")})
+   marker18.bindPopup("<h3> Musée national Adrien Dubouché</h3>   Le musée National Adrien Dubouché propose la découverte des techniques de création de la céramique. Il permet également aux visiteurs de découvrir la véritable histoire de l’art et des civilisations. C’est dans un espace emblématique, conçu pour mettre en valeur ses 5 000 pièces, que le visiteur est reçu. Le musée est ouvert tous les jours, sauf le mardi, de 10h à 12h30 et de 14h à 17h45. Fermetures exceptionnelles le 25 décembre et le 1er janvier. Le musée est aussi accessible aux personnes à mobilité réduite.");
+
+   const marker19 = L.marker([45.83298461515199, 1.2577719828962883], {icon:  geticon("government.png")})
+   marker19.bindPopup("<h3> Préfecture de Limoges </h3>  Dès votre arrivée en France, vous devez valider votre visa. La procédure est entièrement dématérialisée : vous pouvez tout faire à distance. Vous devez valider votre visa au plus tard dans les 3 mois qui suivent votre arrivée en France. Voici l’adresse à laquelle vous devez vous connecter : https://administration-etrangers-en-france.interieur.gouv.fr Après 1 an, vous pouvez demander une carte de séjour temporaire étudiant (valable 1 an) ou pluriannuelle étudiant (valable 2 à 4 ans). Vous devez déposer votre demande de titre à la préfecture (ou sous-préfecture) de votre domicile.");
+
+   const marker20 = L.marker([45.83234090030314, 1.2579775577594023], {icon:  geticon("electronics.png")})
+   marker20.bindPopup("<h3> FNAC  </h3>  Située dans le centre-ville de Limoges, la Fnac vous accueille dans son magasin d’une superficie de plus de 2100m2. Vous y retrouverez tous les univers de la Fnac : livres, disques, DVD, micro‐informatique, objets connectés, gaming, téléphonie, son, photo, TV, papeterie. ");
+
+   const marker21 = L.marker([45.83235655971799, 1.2589186270743955], {icon:  geticon("tickets.png")})
+   marker21.bindPopup("<h3> Opéra de Limoges </h3>  L'opéra de Limoges, initialement nommé Grand théâtre de Limoges puis Opéra-théâtre de Limoges et renommé Opéra de Limoges depuis janvier 2016, est une salle de spectacle située dans le centre-ville 48 Rue Jean Jaurès à Limoges.L'Opéra de Limoges c'est en moyenne 50 000 spectateurs par saison, environ 2 000 abonnés, et environ 60 représentations par saison.Dans le cadre de sa programmation, Opéra de Limoges accueille de nombreux concerts et des pièces de théâtre, des spectacles jeune public. ");
+  
+   const marker22 = L.marker([45.833278085333966, 1.2643096731018821], {icon:  geticon("education.png")})
+   marker22.bindPopup("<h3> CRIJ Nouvelle-Aquitaine </h3> Elle concerne les domaines suivants : enseignement, formation professionnelle et métiers, emploi, éducation permanente, société et vie pratique, loisirs, vacances, Europe, Etranger, sports.Le CRIJ Nouvelle-Aquitaine a pour vocation de favoriser l’accès des jeunes à l’autonomie en leur fournissant des informations et des services utiles dans leur vie quotidienne.le CRIJ Nouvelle-Aquitaine assure aussi un accueil physique dans ses locaux. L’accueil du public y est gratuit, anonyme et sans rendez-vous.");
+
+   const marker23 = L.marker([45.826308489038304, 1.258981450361796], {icon:  geticon("libraries.png")})
+   marker23.bindPopup("<h3> Bibliothèque Francophone Multimédia </h3>  La Bibliothèque francophone multimédia offre un accès à l'ensemble des collections du réseau de la BFM.Il y est possible de consulter environ 700 000 documents.<br>Procédure d’inscription ou de renouvèlement de son inscription : </br>Présentez-vous à l'accueil d’une bibliothèque muni(e) d'une pièce d'identité et d'un justificatif de domicile. Après réception de votre bulletin d’inscription rempli et signé, une carte unique d'une validité d'un an, nommée Bibliopasse, vous est délivrée à titre personnel.  à date anniversaiire.");
+
+   const marker24 = L.marker([45.827552168106656, 1.2599069847455089], {icon:  geticon("pool-halls.png")})
+   marker24.bindPopup("<h3> Aquarium du Limousin </h3>  L’Aquarium de Limoges est reconnu comme l’un des aquariums ouverts au public les plus riches par la diversité des animaux aquatiques présentés. Vous pourrez observer des poissons indigènes mais aussi des animaux provenant des lacs et rivières du monde entier, sans oublier les merveilles du monde marin avec des multitudes de couleurs et de formes plus étonnantes les unes que les autres qui vont vous émerveiller. ");
+
+   const marker25 = L.marker([45.827308629743406, 1.2594275540605386], {icon:  geticon("transport.png")})
+   marker25.bindPopup("<h3> Boutique TCL  </h3>  La carte sans contact (ou « CSC » ou « carte à puce sans contact ») est un support permettant le chargement sur un format « Carte à puce » d’un ou plusieurs titres de transport.\nVous pouvez acheter ou recharger votre titre de transport TCL facilement.\nPour la création de la carte il faudra se munir des pièces justificatives suivantes :\n• 1 pièce d'identité\n• 1 justificatif de domicile de - de 3 mois\n• 1 photo de - d'1 an (faisable sur place) ");
+
+   const marker26 = L.marker([45.82467593787543, 1.2631652694029134], {icon:  geticon("meetups.png")})
+   marker26.bindPopup("<h3> Carrefour des étudiants </h3>  Le Carrefour des étudiants est un lieu ouvert à tous ceux qui souhaitent s’informer librement sur les études et les formations professionnelles de l’enseignement supérieur : étudiants de l’Université de Limoges ou d’autres établissements, lycéens, parents ou actifs en reprise d’études. Un espace documentaire met à votre disposition des ressources sur les formations et leurs débouchés professionnels, les métiers, les secteurs d’activité et les données d’insertion professionnelle. guides d’orientation et d’insertion, sites web et logiciels sont autant de sources pour consulter des données fiables et structurées autour de thèmes variés.");
+
+   const marker27 = L.marker([45.824505685398236, 1.263281896389173], {icon:  geticon("restaurants.png")})
+   marker27.bindPopup("<h3> Restaurant universitaire</h3> Les Crous se mobilisent pour offrir une restauration de qualité et à petit prix à tous les étudiants.<br>Pour 3,30 €, vous pouvez choisir un repas compl, La formule pizza ou pâtes fraîches (pizza végétarienne proposée chaque jour) ou Une formule au prix du ticket étudiant dans les cafétérias.</br> <br>Le paiement :Avec votre carte Izly, En espèces : en caisse, En CB</br>");
+   
+   const marker28 = L.marker([45.8083882927188, 1.2582888313200506], {icon:  geticon("sports.png")})
+   marker28.bindPopup("<h3> UrbanSoccer  </h3>  UrbanSoccer Limoges est un complexe de foot en salle. Vous y trouverez 4 terrains de football indoor et 1 terrain outdoor. Vous pourrez donc y pratiquer le foot à 5 avec vos amis ou vos collègues.  ");
+
+   const marker29 = L.marker([45.828069899324554, 1.268159198238658], {icon:  geticon("parks.png")})
+   marker29.bindPopup("<h3> Jardin Botanique de l'Evêché </h3>  Les jardins de l'Evêché se déploient sur 5 hectares en plein cœur du quartier de la Cité. Les six terrasses qui le composent ont été aménagées sur les pentes du Puy Saint-Etienne. L’on peut y découvrir un jardin à la française, un vaste jardin botanique et un espace écologique présentant les environnements naturels du Limousin. Les terrasses offrent un point de vue remarquable sur les bords de Vienne.  \nOuvert toute la journée. ");
+
+   const marker30 = L.marker([45.82821092695607, 1.2664274135811155], {icon:  geticon("museums.png")})
+   marker30.bindPopup("<h3> Musée des Beaux-Arts de Limoges</h3>  le musée des Beaux-Arts de Limoges est installé au pied de la cathédrale dans le quartier historique de la Cité, aujourd’hui classé Monument historique. Ce bâtiment majestueux accueille le musée depuis 1912. <br>Sur les quelque 11.000 œuvres d’art et objets historiques précieux du Musée, 9.000 pièces sont conservées dans les réserves, et 2.000 sont présentées dans le parcours permanent ouvert aux visiteurs. ");
+
+   const marker31 = L.marker([45.830997718347255, 1.2712213847455758], {icon:  geticon("arts-crafts.png")})
+   marker31.bindPopup("<h3> Patinoire Olympique municipale de Limoges </h3> Située sur les bords Vienne, la patinoire olympique municipale propose aussi une pratique scolaire ou sportive avec trois clubs utilisateurs (danse sur glace, hockey sur glace et patinage artistique).Vous pouvez également patiner librement, seul ou entre amis, lors des nombreuses séances et animations ouvertes au public tout au long de l’année. Quel que soit votre niveau, à tout âge, vous pouvez éprouver les sensations de la glisse, et partager de vrais moments de plaisir avec vos proches.  ");
+
+   const marker32 = L.marker([45.81271784055687, 1.235379398238187], {icon:  geticon("health-medical.png")})
+   marker32.bindPopup("<h3> Centre hospitalier universitaire de Limoges </h3>  Le centre hospitalier universitaire de Limoges est un établissement public de santé du Limousin, le plus important de la région, fondé le 30 avril 1974, relié à l'université de Limoges. ");
+
+   const marker33 = L.marker([45.82593781028866, 1.2271353270742003], {icon:  geticon("tires-accessories.png")})
+   marker33.bindPopup("<h3>Caisse d'Allocations Familiales de la Haute-Vienne </h3>  Lorsque vous louez un logement pour suivre vos études, vous pouvez peut-être bénéficier d’une aide au logement. Versée par la Caisse d’allocations familiales, son montant dépend de vos ressources.<br>Selon le type de logement que vous occupez, vous pouvez prétendre à deux types d'aide (APL ou ALS). <br>La procédure est la suivante :<br>1. Munissez-vous de  :<br>• votre contrat de location ;<br>• votre relevé d’identité bancaire (Rib) ;<br>• vos revenus du patrimoine (revenus de placement imposables, revenus immobiliers…).<br>2. Connectez-vous sur Caf.fr<br>3. Validez et envoyez les justificatifs nécessaires à :<br>• transmettreundocument.caf87@info-caf.fr ;<br>• Caf de la Haute-Vienne. ");
+
+var cat = ["Commerces , consommation", "Administrations,vie citoyenne et vie pratique", "Culture et loisirs", "Santé", "Sports", "Education","Associations"];
+var tout = L.layerGroup([secour,marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9, marker11, marker13, marker10, marker12, marker14, marker15,marker16,marker18,marker19,marker20,marker21,marker22,marker23,marker25,marker26, marker18, marker27,marker28,marker29,marker30,marker31,marker32,marker33, marker24]);
+var Commerces = L.layerGroup([marker0, marker1, marker2, marker3, marker11, marker20]);
+var Administrations = L.layerGroup([marker13, marker19, marker25]);
+var Culture = L.layerGroup([marker4, marker6, marker7, marker10,marker29, marker30, marker12, marker14, marker15, marker18, marker21, marker24]);
+var Santé = L.layerGroup([marker32]);
+var Sports = L.layerGroup([marker28, marker31]);
+var Education = L.layerGroup([marker23]);
+var Associations = L.layerGroup([secour, marker5, marker8, marker9, marker16, marker22, marker26, marker27, marker33]);
+
+var caract = [Commerces,Administrations,Culture,Santé,Sports,Education,Associations];
+var cities = L.layerGroup([marker3, marker32, marker30, marker31]);
+var mapboxAttribution= 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+	var mapboxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+ var grayscale = L.tileLayer(mapboxUrl, {id: 'MapID', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution}),
+    streets   = L.tileLayer(mapboxUrl, {id: 'MapID', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
+var baseMaps = {
+    "<span style='color: gray'>Grayscale</span>": grayscale,
+    "Streets": streets
+};
+
+
+var overlayMaps = {
+    "Tout" : tout,
+
+        "Commerces , consommation" : Commerces,
+         "Administrations,vie citoyenne et vie pratique" : Administrations,
+          "Culture et loisirs" : Culture,
+          "Santé" : Santé,
+          "Sports" : Sports,
+          "Education" :Education,
+          "Associations Et aides etudiants" :Associations
+};
+
+
+const apiKey = 'pk.eyJ1IjoiYWxmcmVkMjAxNiIsImEiOiJja2RoMHkyd2wwdnZjMnJ0MTJwbnVmeng5In0.E4QbAFjiWLY8k3AFhDtErA';
+      
+ //     var tout = L.layerGroup([marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9, marker11, marker13, marker10, marker12, marker14, marker15,marker16,marker18,marker19,marker20,marker21,marker22,marker23,marker25,marker26, marker18, marker27,marker28,marker29,marker30,marker31,marker32,marker33, marker24]);
+
+      const mymap = L.map('map', {
+  center: [46.8, 2.0],
+  zoom: 5,
+  "layers": tout
+}).setView([45.84606570234254, 1.2552307925852018], 13);
+      
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'interactive map &copy; <a href="https://www.openstreetmap.org/copyright">3il</a> ',
+    maxZoom: 18,
+          maxZoom: 18,
+          id: 'mapbox/streets-v11',
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken: apiKey
+      }, {icon: "shopping.png"}).addTo(mymap);
+L.control.layers(overlayMaps).addTo(mymap);
+
+function toggleLayer(layer){
+  const visible = mymap.hasLayer(layer);
+  if (visible) {
+    mymap.removeLayer(layer);
+  }
+  else {
+    mymap.addLayer(layer);
+  }
+}
+
+         </script>
+  
+</body>
+
+</body>
+</html>
